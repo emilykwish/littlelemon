@@ -5,7 +5,8 @@ from .models import MenuItem  # Ensure you import your MenuItem model
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = MenuItem  # Specifies the model to serialize
-        fields = '__all__'  # Indicates that all fields in the model should be included in the serializer
+        fields = ['id','title','price','inventory']
+        # fields = '__all__'  # Indicates that all fields in the model should be included in the serializer
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

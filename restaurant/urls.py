@@ -7,9 +7,8 @@ from .views import sayHello, MenuItemsView, BookingViewSet
 urlpatterns = [ 
     path('', sayHello, name='sayHello'), 
     path('', views.index, name='index'),
-    path('menu/', views.MenuItemsView.as_view()),
+    path('menu-items/', views.MenuItemsView.as_view()),
     path('menu/<int:pk>', views.SingleMenuItemView.as_view()),  
     path('api-token-auth/', obtain_auth_token),
-    # path('menu/', MenuView.as_view()),
-    # path('booking/', bookingview.as_view()),
+    path('booking/', BookingViewSet.as_view({'get': 'list'})),
 ]
